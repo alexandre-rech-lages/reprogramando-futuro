@@ -1,0 +1,10 @@
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Api.exe
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\appsettings.Development.json
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\appsettings.json
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\project.json
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Api.dll
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Api.deps.json
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Api.runtimeconfig.json
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Api.pdb
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Microsoft.AspNetCore.OpenApi.dll
+D:\Projetos Visual Studio\2026\reprogramando-futuro\dist\apps\api\Microsoft.OpenApi.dll

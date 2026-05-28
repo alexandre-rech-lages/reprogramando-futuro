@@ -1,0 +1,54 @@
+{
+  "name": "api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/api",
+  "tags": ["scope:api", "type:app"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/api"],
+      "options": {
+        "command": "dotnet publish apps/api/Api.csproj -c Release -o dist/apps/api",
+        "cwd": "{workspaceRoot}"
+      },
+      "configurations": {
+        "production": {
+          "command": "dotnet publish apps/api/Api.csproj -c Release -o dist/apps/api"
+        },
+        "development": {
+          "command": "dotnet build apps/api/Api.csproj -c Debug"
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet watch --project apps/api/Api.csproj run",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet test apps/api/Api.csproj",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "dotnet format apps/api/Api.csproj --verify-no-changes",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "docker-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build -f apps/api/Dockerfile -t reprogramando-futuro-api .",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  }
+}
