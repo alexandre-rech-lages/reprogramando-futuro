@@ -1,0 +1,246 @@
+.program-details-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg,
+    var(--ct-bg) 0%,
+    rgba(219, 86, 235, 0.03) 50%,
+    var(--ct-bg) 100%
+  );
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--ct-text);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Card STEAM
+.steam-card {
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  box-shadow: var(--ct-shadow-pink);
+}
+
+// Seção de plataformas
+.section-subtitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ct-pink-light);
+}
+
+.platform-card {
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease backwards;
+
+  &:hover {
+    border-color: var(--ct-pink);
+    transform: translateY(-5px);
+    box-shadow: var(--ct-shadow-pink);
+  }
+
+  .platform-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: var(--ct-grad-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 1.75rem;
+      color: white;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--ct-pink-light);
+  }
+
+  .platform-arrow {
+    font-size: 2rem;
+    color: var(--ct-pink-light);
+    margin: 0.5rem 0;
+    font-weight: 300;
+  }
+
+  .platform-description {
+    font-size: 1rem;
+    color: var(--ct-text-muted);
+    margin-bottom: 0;
+  }
+}
+
+// Como funcionam as aulas
+.class-info-grid {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.class-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--ct-pink);
+    background: var(--ct-bg-soft);
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: var(--ct-pink-light);
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ct-text);
+  }
+}
+
+// Estrutura do curso
+.course-structure-card {
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1rem;
+  padding: 2.5rem;
+}
+
+.structure-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+
+    i {
+      color: var(--ct-pink-light);
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.start-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--ct-bg-soft);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+
+  i {
+    font-size: 1.5rem;
+    color: var(--ct-pink-light);
+  }
+
+  strong {
+    color: var(--ct-pink-light);
+  }
+}
+
+// Investimento
+.investment-card {
+  background: var(--ct-bg-card);
+  border: 2px solid var(--ct-pink);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: var(--ct-shadow-pink);
+}
+
+.price-option {
+  background: var(--ct-bg-soft);
+  border: 1px solid var(--ct-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--ct-bg-elev);
+    border-color: var(--ct-pink);
+    transform: scale(1.05);
+  }
+
+  i {
+    font-size: 2.5rem;
+    color: var(--ct-pink-light);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+}
+
+// Frase de impacto
+.impact-message {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--ct-grad-pink);
+  border-radius: 1rem;
+  border: 1px solid var(--ct-border-strong);
+  opacity: 0.9;
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+    color: white;
+
+    strong {
+      color: white;
+      font-style: normal;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Animação
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,35 @@
+<section class="features-section" id="como-funciona">
+  <div class="container-xl position-relative">
+
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <span class="eyebrow">como funciona</span>
+        <h2 class="mb-3">
+          Tecnologia com projetos que viram <span class="text-pink-light">portfólio</span>
+        </h2>
+        <p class="lead text-dim">
+          Aulas que combinam raciocínio lógico, prática constante e a criação de projetos reais —
+          <br>do primeiro <code class="text-pink-light">console.log</code> ao deploy.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      @for (f of features; track f.title; let i = $index) {
+        <div class="col-md-6 col-lg-4">
+          <article class="feature-card" [style.animation-delay.s]="i * 0.08">
+            <div class="feature-header d-flex gap-3 align-items-center ">
+              <div class="feature-icon">
+                <i class="bi" [class]="f.icon"></i>
+              </div>
+              <h3 class="feature-title">{{ f.title }}</h3>
+            </div>
+           
+            <p class="feature-text">{{ f.description }}</p>
+          </article>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

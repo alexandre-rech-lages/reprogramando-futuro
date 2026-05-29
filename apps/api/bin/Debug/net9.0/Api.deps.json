@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v9.0": {
       "Api/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": "9.0.12"
+          "Microsoft.AspNetCore.OpenApi": "9.0.12",
+          "Resend": "0.5.1"
         },
         "runtime": {
           "Api.dll": {}
@@ -30,6 +31,14 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.6.17.0",
             "fileVersion": "1.6.17.0"
+          }
+        }
+      },
+      "Resend/0.5.1": {
+        "runtime": {
+          "lib/net8.0/Resend.dll": {
+            "assemblyVersion": "0.5.1.0",
+            "fileVersion": "0.5.1.0"
           }
         }
       }
@@ -54,6 +63,13 @@
       "sha512": "sha512-Le+kehlmrlQfuDFUt1zZ2dVwrhFQtKREdKBo+rexOwaCoYP0/qpgT9tLxCsZjsgR5Itk1UKPcbgO+FyaNid/bA==",
       "path": "microsoft.openapi/1.6.17",
       "hashPath": "microsoft.openapi.1.6.17.nupkg.sha512"
+    },
+    "Resend/0.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-omjgTjmosGHJ+bF9Mnk6Gu4TqCwIE/XyeYvQCfkPlDmoUE5yuNwxUP5Cyt9Og2KTqTzKqfQypFzlgCgORCEOSw==",
+      "path": "resend/0.5.1",
+      "hashPath": "resend.0.5.1.nupkg.sha512"
     }
   }
 }

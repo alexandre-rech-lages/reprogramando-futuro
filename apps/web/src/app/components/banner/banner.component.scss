@@ -1,0 +1,275 @@
+:host {
+  display: block;
+  // Tema da seção: preto absoluto
+  --ct-bg-card: #1a002e;
+  --ct-bg-elev: #23003A;
+}
+
+.banner {
+  position: relative;
+  min-height: 100vh;
+  padding: 9rem 0 5rem;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #010101;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  opacity: 0.6;
+}
+
+.blob-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(219, 86, 235, 0.55), transparent 70%);
+  top: -200px; left: -200px;
+  animation: float 12s ease-in-out infinite;
+}
+.blob-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(91, 65, 147, 0.55), transparent 70%);
+  bottom: -150px; right: -150px;
+  animation: float 14s ease-in-out infinite reverse;
+}
+
+.banner-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.cursor-blink {
+  display: inline-block;
+  color: var(--ct-orange);
+  animation: blink 1s steps(2) infinite;
+}
+
+.banner-sub {
+  font-size: 1.15rem;
+  color: var(--ct-text-muted);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+// Trilhas do curso
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.75rem;
+}
+.track-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 14px;
+  transition: all 0.25s ease;
+
+  i {
+    font-size: 1.5rem;
+    width: 38px; height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  small { color: var(--ct-text-dim); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  strong { color: #fff; font-family: var(--ct-font-display); font-size: 1rem; }
+
+  &[data-color="purple"] i { background: rgba(219, 86, 235, 0.18); color: var(--ct-magenta-light); }
+  &[data-color="orange"] i { background: rgba(91, 65, 147, 0.30); color: var(--ct-magenta-light); }
+  &[data-color="lime"]   i { background: rgba(233, 133, 240, 0.18); color: var(--ct-magenta); }
+
+  &:hover {
+    border-color: var(--ct-border-strong);
+    transform: translateY(-3px);
+  }
+}
+
+// Métricas
+.metrics { color: #fff; }
+.metric-num {
+  font-family: var(--ct-font-display);
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 900;
+  background: var(--ct-grad-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--ct-text-muted);
+  margin-top: 0.25rem;
+}
+
+// Code card decorativo
+.code-card {
+  position: relative;
+  background: linear-gradient(180deg, #23003A 0%, #0a0014 100%);
+  border: 1px solid var(--ct-border-strong);
+  border-radius: 20px;
+  box-shadow: 0 30px 80px -20px rgba(219, 86, 235, 0.45),
+              0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  overflow: hidden;
+}
+.code-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--ct-border);
+
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .file-name {
+    font-family: var(--ct-font-mono);
+    font-size: 0.8rem;
+    color: var(--ct-text-dim);
+  }
+}
+.code-card-body {
+  padding: 1.5rem;
+  margin: 0;
+  font-family: var(--ct-font-mono);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+  background: transparent;
+  overflow-x: auto;
+
+  .kw   { color: #E985F0; font-weight: 600; }
+  .var  { color: #f5d4f9; }
+  .prop { color: #8B5DB8; }
+  .str  { color: #DB56EB; }
+  .num  { color: #E985F0; }
+  .fn   { color: #f5d4f9; }
+}
+
+.float-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: -1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--ct-grad-orange);
+  color: #23003A;
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 15px 40px -10px rgba(219, 86, 235, 0.65);
+
+  i { font-size: 1.1rem; }
+}
+
+@media (max-width: 991px) {
+  .float-badge { bottom: -1.5rem; left: 1rem; }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ct-text-muted);
+  font-size: 1.5rem;
+  text-decoration: none;
+  animation: float 2s ease-in-out infinite;
+  z-index: 2;
+
+  &:hover { color: var(--ct-orange); }
+}
+
+// Formulário de contato
+.form-card {
+  background: linear-gradient(180deg, #8d02ea 0%, #0a0014 100%);
+  border: 1px solid var(--ct-border-strong);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;  
+  box-shadow: 0 30px 80px -20px rgba(141, 2, 234, 0.45),
+              0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  @media (max-width: 991px) {
+    margin-top: 2rem;
+  }
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--ct-font-display);
+}
+
+.contact-form {
+  .form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--ct-border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: var(--ct-text-dim);
+    }
+
+    &:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.5);
+      border-color: var(--ct-orange);
+      box-shadow: 0 0 0 3px rgba(219, 86, 235, 0.1);
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #ef4444;
+    }
+  }
+}
+
+.form-footer-text {
+  color: var(--ct-text-muted);
+}
+
+@media (max-width: 768px) {
+  .banner { padding-top: 7rem; min-height: auto; }
+  .scroll-cue { display: none; }
+
+  .form-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+  }
+
+  // Botões de CTA mais próximos do formulário em mobile
+  .banner-row > .col-lg-5 {
+    order: 1;
+  }
+
+  .banner-row > .col-lg-4 {
+    order: 2;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,65 @@
+<footer class="site-footer">
+  <div class="container-xl">
+
+    <!-- Topo do footer -->
+    <div class="row g-4 footer-top">
+      <div class="col-lg-4">
+        <!-- Logo -->
+        <a href="#topo" class="brand d-flex align-items-center gap-2 text-decoration-none mb-4">
+          <!-- <span class="brand-name">reprogramando <br> &lt;F&gt;<span class="text-grad-orange">uturo</span></span> -->
+          <img src="assets/logo-reprogramando-futuro-6.svg" alt="Logo Reprogramando o Futuro" width="150">
+        </a>
+        <p class="text-dim mb-4">
+          Programação para jovens dos 10 aos 17 anos. Aulas presenciais e online, projetos reais e
+          comunidade ativa para quem quer construir o próprio futuro em tecnologia.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2">
+          @for (s of socials; track s.label) {
+          <a [href]="s.url" class="social-btn" [attr.aria-label]="s.label" target="_blank" rel="noopener noreferrer">
+            <i class="bi" [class]="s.icon"></i>
+          </a>
+          }
+        </div>
+      </div>
+
+      @for (col of columns; track col.title) {
+      <div class="col-6 col-md-4 col-lg-2 offset-lg-0">
+        <h6 class="footer-col-title">{{ col.title }}</h6>
+        <ul class="list-unstyled footer-links">
+          @for (link of col.links; track link.label) {
+          <li><a [href]="link.href">{{ link.label }}</a></li>
+          }
+        </ul>
+      </div>
+      }
+
+      <div class="col-lg-2">
+        <h6 class="footer-col-title">Contato</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="mailto:rech@academiadoprogramador.net"><i
+                class="bi bi-envelope me-2"></i>rech&#64;academiadoprogramador.net</a></li>
+          <li><a href="tel:+5549999292107"><i class="bi bi-telephone me-2"></i>(49) 99929-2107</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- Base -->
+    <div class="row align-items-center pb-4">
+      <div class="col-md-7">
+        <small class="text-dim">
+          © {{ year }} Reprogramando Futuro — Iniciativa da <a href="https://www.academiadoProgramador.net"
+            target="_blank">Academia do Programador</a> — Todos os direitos reservados.
+        </small>
+      </div>
+      <div class="col-md-5 text-md-end mt-3 mt-md-0">
+        <small class="text-dim">
+          Feito com <i class="bi bi-heart-fill text-orange"></i> e muito código.
+        </small>
+      </div>
+    </div>
+
+  </div>
+</footer>

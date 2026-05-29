@@ -1,0 +1,104 @@
+:host {
+  display: block;
+  // Tema da seção: roxo escuro (descida do pico)
+  --ct-bg-card: #23003A;
+  --ct-bg-elev: #3D2A6A;
+  --ct-border: rgba(219, 86, 235, 0.22);
+  --ct-border-strong: rgba(219, 86, 235, 0.45);
+}
+
+.modalities-section {
+  background:  black; //linear-gradient(180deg, #23003A 0%, #1a002e 18%, #1a002e 100%);
+}
+
+.modality-card {
+  height: 100%;
+  padding: 2.5rem 2rem;
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  &[data-type="presencial"]::before {
+    background: var(--ct-grad-hero);
+  }
+  &[data-type="online"]::before {
+    background: var(--ct-grad-orange);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: var(--ct-border-strong);
+    box-shadow: var(--ct-shadow-card);
+  }
+}
+
+.modality-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+
+  > i {
+    font-size: 2.5rem;
+    color: var(--ct-purple-light);
+  }
+}
+
+.modality-card[data-type="online"] .modality-head > i {
+  color: var(--ct-orange);
+}
+
+.modality-badge {
+  font-family: var(--ct-font-mono);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(219, 86, 235, 0.14);
+  border: 1px solid var(--ct-border);
+  border-radius: 999px;
+  color: var(--ct-magenta-light);
+}
+.modality-card[data-type="online"] .modality-badge {
+  background: rgba(91, 65, 147, 0.25);
+  color: var(--ct-magenta-light);
+}
+
+.modality-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.modality-highlight {
+  color: var(--ct-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modality-list {
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(219, 86, 235, 0.12);
+    color: var(--ct-text);
+
+    i {
+      color: var(--ct-lime);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    &:last-child { border-bottom: none; }
+  }
+}

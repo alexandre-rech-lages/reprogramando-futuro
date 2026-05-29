@@ -1,0 +1,42 @@
+<section class="outcomes-section" id="resultados">
+  <div class="outcomes-bg-wrap">
+    <!-- <div class="blob blob-orange"></div> -->
+    <!-- <div class="blob blob-purple"></div> -->
+  </div>
+
+  <div class="container-xl position-relative">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-5">
+        <span class="eyebrow">resultados concretos</span>
+        <h2 class="mb-4">
+          No fim da jornada, seu filho(a) será capaz de
+          <span class="text-grad-orange">criar tecnologia de verdade</span>
+        </h2>
+        <p class="lead text-dim mb-4">
+          O que diferencia esta formação é a entrega final: um conjunto de projetos publicados,
+          que mostram domínio técnico real e podem ser apresentados em qualquer processo seletivo.
+        </p>
+
+        <a href="#matricula" class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2">
+          <i class="bi bi-person-check"></i>
+          Quero inscrever meu filho(a)
+        </a>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="outcomes-grid">
+          @for (o of outcomes; track o.text; let i = $index) {
+            <div class="outcome-pill" [style.animation-delay.s]="i * 0.07">
+              <span class="outcome-icon">
+                <i class="bi" [class]="o.icon"></i>
+              </span>
+              <span class="outcome-text">{{ o.text }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

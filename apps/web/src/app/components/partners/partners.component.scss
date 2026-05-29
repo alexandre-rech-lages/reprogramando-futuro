@@ -1,0 +1,149 @@
+:host {
+  display: block;
+}
+
+.partners-section {
+  background: #23003A;
+  overflow: hidden;
+}
+
+// Blobs decorativos
+.blob-left {
+  width: 420px; height: 420px;
+  background: rgba(91, 65, 147, 0.25);
+  top: -80px; left: -140px;
+}
+.blob-right {
+  width: 320px; height: 320px;
+  background: rgba(219, 86, 235, 0.12);
+  bottom: -60px; right: -100px;
+}
+
+// ─── Card ────────────────────────────────────────────────────
+.partner-card {
+  position: relative;
+  height: 100%;
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1.5rem;
+  padding: 2rem 2rem 2.25rem;
+  transition: all 0.3s ease;
+  animation: slide-up 0.6s ease-out both;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--ct-border-strong);
+    box-shadow: var(--ct-shadow-card);
+  }
+}
+
+// ─── Badge (tipo de parceria) ─────────────────────────────────
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--ct-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ct-purple-deep);
+  background: var(--ct-pink);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  width: fit-content;
+
+  &--edu {
+    background: var(--ct-purple-mid);
+    color: #fff;
+  }
+}
+
+// ─── Logotipo ─────────────────────────────────────────────────
+.partner-logo-wrap {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ct-bg-card);
+  border-radius: 1rem;
+  //padding: 1.25rem 2rem;
+  min-height: 100px;    
+}
+
+.partner-logo {
+  max-height: 64px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+
+  &--uniplac {
+    max-height: 72px;
+  }
+}
+
+// ─── Texto ────────────────────────────────────────────────────
+.partner-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.partner-desc {
+  color: var(--ct-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  font-size: 0.95rem;
+
+  strong {
+    color: var(--ct-text);
+    font-weight: 600;
+  }
+}
+
+.partner-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--ct-text-muted);
+
+    i {
+      color: var(--ct-pink);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─── Quote ────────────────────────────────────────────────────
+.partner-quote {
+  font-family: var(--ct-font-display);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ct-text-muted);
+  line-height: 1.7;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  position: relative;
+}
+
+.quote-icon {
+  display: block;
+  font-size: 3rem;
+  color: var(--ct-border-strong);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}

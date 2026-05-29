@@ -1,0 +1,88 @@
+<section class="about-section" id="sobre">
+  <div class="container-xl position-relative">
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-6">
+        <span class="eyebrow">o curso em poucas palavras</span>
+        <h2 class="mb-4">
+          Programação para
+          <span class="text-pink-light">crianças e adolescentes </span>
+          dos 10 aos 17 anos
+        </h2>
+        <p class="lead mb-4">
+          O <span class="text-pink-light fw-semibold">Reprogramando Futuro</span> 
+          oferece uma experiência prática e dinâmica em 
+          <span class="text-pink-light fw-semibold">programação para crianças e adolescentes</span>, 
+          com aulas semanais de 1h30min, turmas reduzidas de até 14 alunos e modalidades 
+          <span class="text-pink-light fw-semibold">presencial ou online ao vivo</span>. 
+        </p>
+        <p class="lead mb-4">
+          As 
+          <span class="text-pink-light fw-semibold">aulas presenciais acontecem na UNIPLAC</span>, com opções de turmas nos 
+          <span class="text-pink-light fw-semibold">períodos matutino e vespertino</span>.
+          A formação será 
+          <span class="text-pink-light fw-semibold">dividida em 3 trilhas</span>, 
+          e cada módulo contará com 
+          <span class="text-pink-light fw-semibold">20 encontros práticos e interativos</span>, 
+          focados no desenvolvimento de projetos reais. Ao longo da jornada, os alunos terão uma experiência completa de 
+          <span class="text-pink-light fw-semibold">40 horas de aprendizado por módulo</span>. 
+          </p>
+          <p class="lead mb-4">
+          As aulas iniciam em julho de 2026, com inscrições abertas a partir de maio de 2026.
+        </p>
+
+        <!-- <h6 class="text-uppercase text-pink-light mb-3 small fw-bold tracking">
+          Como funcionam as aulas?
+        </h6> -->
+
+        <!-- <ul class="capability-list list-unstyled">
+          @for (item of infos; track $index) {
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ item }}</span>
+          </li>
+          }
+        </ul> -->
+
+      </div>
+
+      <!-- Cards das trilhas -->
+      <div class="col-lg-6">
+        <h6 class="text-uppercase small fw-bold mb-3 moduleing">Três trilhas, um caminho</h6>
+        <div class="modules-stack">
+          @for (m of modules; track m.name) {
+
+          <article class="module-card">
+
+            <!-- <h3 class="mb-3">{{ m.name }}</h3> -->
+            <img [src]="m.logo" alt="{{ m.name }} logo" class="module-logo">
+
+            <div class="module-card-head mt-4">
+
+              <h3>{{ m.description }}</h3> 
+
+              <!-- <span class="module-icon">
+                        <i class="bi" [class]="m.icon"></i>
+                      
+                      </span>
+                      <div>
+                       
+                      </div>
+                      </div>
+                      <div class="module-tags d-flex align-items-center gap-2 flex-wrap">
+                        @for (s of m.highlights; track s) {
+                        <span class="module-tag">{{ s }}</span>
+                        }
+                      </div> -->
+
+            </div>
+
+          </article>
+          }
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+</section>

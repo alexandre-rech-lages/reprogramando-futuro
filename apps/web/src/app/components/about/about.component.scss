@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  // Tema da seção: preto azulado discreto
+  --ct-bg-card: #1a002e;
+  --ct-bg-elev: #23003A;
+}
+
+.about-section {
+  background: #23003A; // linear-gradient(180deg, #23003A 0%, #0a0014 100%);
+}
+
+.moduleing {
+  letter-spacing: 0.15em;
+}
+
+.capability-list {
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px dashed rgba(219, 86, 235, 0.14);
+    color: var(--ct-text);
+    font-size: 1.05rem;
+
+    i {
+      color: var(--ct-magenta);
+      font-size: 1.2rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.modules-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.module-card {
+  position: relative;
+  padding: 1.5rem 1.75rem;
+  background: var(--ct-bg-card);
+  border: 1px solid var(--ct-border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateX(6px);
+    border-color: var(--ct-border-strong);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+}
+
+.module-card-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  small {
+    display: block;
+    color: var(--ct-text-dim);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-family: var(--ct-font-mono);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+}
+
+.module-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.module-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.module-tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--ct-border);
+  font-family: var(--ct-font-mono);
+  font-size: 0.78rem;
+  color: var(--ct-text);
+}
+
+.module-logo {
+  width: 180px;
+}

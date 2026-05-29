@@ -33,3 +33,4 @@ D:\Projetos Visual Studio\2026\reprogramando-futuro\apps\api\obj\Debug\net9.0\re
 D:\Projetos Visual Studio\2026\reprogramando-futuro\apps\api\obj\Debug\net9.0\Api.pdb
 D:\Projetos Visual Studio\2026\reprogramando-futuro\apps\api\obj\Debug\net9.0\Api.genruntimeconfig.cache
 D:\Projetos Visual Studio\2026\reprogramando-futuro\apps\api\obj\Debug\net9.0\ref\Api.dll
+D:\Projetos Visual Studio\2026\reprogramando-futuro\apps\api\bin\Debug\net9.0\Resend.dll

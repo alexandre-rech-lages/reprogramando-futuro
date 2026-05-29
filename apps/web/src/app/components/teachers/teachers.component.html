@@ -1,0 +1,42 @@
+<section class="teachers-section" id="professores">
+  <div class="container-xl position-relative">
+
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <span class="eyebrow">nossos professores</span>
+        <h2 class="mb-3">
+          Apaixonados por <span class="text-pink-light">ensinar</span> tecnologia
+        </h2>
+        <p class="lead text-dim">
+          Profissionais experientes que transformam código em aprendizado real,
+          <br>conectando teoria e prática com paixão pela educação.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (teacher of teachers; track teacher.name; let i = $index) {
+        <div class="col-md-6 col-lg-4">
+          <article class="teacher-card" [style.animation-delay.s]="i * 0.1">
+            <div class="teacher-photo-wrapper">
+              <img
+                [src]="teacher.photo"
+                [alt]="teacher.name"
+                class="teacher-photo"
+              >
+            </div>
+            <div class="teacher-content">
+              <h3 class="teacher-name">{{ teacher.name }}</h3>
+              <p class="teacher-profile">{{ teacher.profile }}</p>
+              <div class="teacher-quote">
+                <i class="bi bi-quote"></i>
+                <p class="quote-text">{{ teacher.quote }}</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

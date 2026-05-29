@@ -1,0 +1,136 @@
+<section class="program-details-section" id="programa">
+  <div class="container-xl position-relative">
+
+    <!-- Cabeçalho -->
+    <div class="row text-center mb-5">
+      <div class="col-lg-10 mx-auto">
+        <span class="eyebrow">conheça o programa</span>
+        <h2 class="mb-4">
+          Reprogramando <span class="text-pink-light">Futuro</span>
+        </h2>
+        <p class="lead text-dim mb-4">
+          Programação, criatividade e tecnologia para crianças e adolescentes
+        </p>
+        <p class="intro-text">
+          O Reprogramando o Futuro é um programa de ensino de programação criado especialmente para
+          crianças e adolescentes que desejam ir além de apenas consumir tecnologia — aqui, eles
+          aprendem a <strong>criar jogos</strong>, <strong>desenvolver projetos</strong> e
+          <strong>transformar ideias em realidade</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Metodologia STEAM -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="steam-card">
+          <p class="mb-0">
+            Com uma metodologia prática, divertida e baseada no currículo
+            <strong class="text-pink-light">STEAM</strong>
+            (Ciência, Tecnologia, Engenharia, Artes e Matemática), os alunos desenvolvem
+            <strong>raciocínio lógico</strong>, <strong>criatividade</strong>,
+            <strong>resolução de problemas</strong> e habilidades essenciais para o futuro.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estrutura do curso -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="section-subtitle text-center mb-4">
+          Estrutura do curso
+        </h3>
+        <div class="row g-4">
+          @for (platform of platforms; track platform.name; let i = $index) {
+            <div class="col-md-4">
+              <div class="platform-card" [style.animation-delay.s]="i * 0.1">
+                <div class="platform-icon">
+                  <i class="bi" [class]="platform.icon"></i>
+                </div>
+                <h4>{{ platform.name }}</h4>
+                <p class="platform-arrow">→</p>
+                <p class="platform-description">{{ platform.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Como funcionam as aulas -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <h3 class="section-subtitle mb-4">Como funcionam as aulas</h3>
+        <div class="class-info-grid">
+          @for (info of classInfo; track info.text) {
+            <div class="class-info-item">
+              <i class="bi" [class]="info.icon"></i>
+              <span>{{ info.text }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Estrutura do curso -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="course-structure-card">
+          <h3 class="section-subtitle mb-4">Estrutura do curso</h3>
+          <p class="mb-3">Cada módulo possui:</p>
+          <ul class="structure-list">
+            @for (item of courseStructure; track item) {
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+          <div class="start-date mt-4">
+            <i class="bi bi-calendar-event"></i>
+            <strong>Início das turmas:</strong> Julho de 2026
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Investimento -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="investment-card">
+          <h3 class="section-subtitle text-center mb-4">Investimento</h3>
+          <p class="text-center mb-4">Cada módulo poderá ser realizado por:</p>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="price-option">
+                <i class="bi bi-credit-card"></i>
+                <div class="price-value">6x de R$ 165,00</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="price-option">
+                <i class="bi bi-cash-coin"></i>
+                <div class="price-value">R$ 900,00 à vista</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frase de impacto -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="impact-message">
+          <p>
+            Mais do que aprender programação, o aluno desenvolve
+            <strong>autonomia</strong>, <strong>criatividade</strong> e
+            <strong>confiança</strong> para construir o próprio futuro através da tecnologia.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

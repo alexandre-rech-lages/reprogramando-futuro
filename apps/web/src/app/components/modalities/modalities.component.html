@@ -1,0 +1,51 @@
+<section class="modalities-section" id="modalidades">
+  <div class="container-xl">
+
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <span class="eyebrow">duas modalidades</span>
+        <h2 class="mb-3">
+          Dois caminhos, <span class="text-grad-orange">a mesma jornada</span>
+        </h2>
+        <p class="lead text-dim">
+          Escolha o formato que se encaixa melhor na rotina da família — o conteúdo, a profundidade e os projetos são os mesmos.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      @for (m of modalities; track m.type) {
+        <div class="col-md-6 col-lg-5">
+          <article class="modality-card" [attr.data-type]="m.type">
+            <div class="modality-head">
+              <i class="bi" [class]="m.type === 'presencial' ? 'bi-building' : 'bi-broadcast'"></i>
+              <span class="modality-badge">{{ m.badge }}</span>
+            </div>
+            <h3 class="modality-title">{{ m.title }}</h3>
+            <p class="modality-highlight">{{ m.highlight }}</p>
+            <ul class="modality-list list-unstyled mb-4">
+              @for (d of m.details; track d) {
+                <li>
+                  <i class="bi bi-check2"></i>
+                  <span>{{ d }}</span>
+                </li>
+              }
+            </ul>
+            <a href="#matricula" class="btn btn-outline-ghost w-100 d-inline-flex align-items-center justify-content-center gap-2">
+              Escolher esta modalidade
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </article>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#matricula" class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2">
+        <i class="bi bi-mortarboard"></i>
+        Faça uma aula experimental
+      </a>
+    </div>
+
+  </div>
+</section>
