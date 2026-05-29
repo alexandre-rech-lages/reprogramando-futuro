@@ -62,8 +62,6 @@ app.MapPost("/api/enrollment", async (EnrollmentRequest request, IHttpClientFact
 
     Console.WriteLine($"Email para equipe: Status {resp1.Content}");
 
-    var id = "programao-futuro";
-
     var resp2 = await resend.EmailSendAsync( new EmailMessage()
     {
         From = "rech@academiadoprogramador.net",
