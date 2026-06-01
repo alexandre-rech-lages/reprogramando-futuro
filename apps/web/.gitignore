@@ -1,0 +1,7 @@
+.angular/
+
+dist/
+
+coverage/
+
+src/environments/*.local.ts
