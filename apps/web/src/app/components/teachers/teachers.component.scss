@@ -1,0 +1,106 @@
+:host {
+  display: block;
+}
+
+.teachers-section {
+  background: #23003A;
+  padding: 6rem 0;
+}
+
+.teacher-card {
+  height: 100%;
+  background: var(--ct-bg-card);
+  border: 3px solid var(--ct-border);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: slide-up 0.6s ease-out both;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: var(--ct-border-strong);
+    box-shadow: 0 20px 40px -15px rgba(219, 86, 235, 0.4);    
+  }
+}
+
+.teacher-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+  }
+}
+
+.teacher-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  //transition: transform 0.4s ease;
+}
+
+.teacher-content {
+  padding: 2rem;
+}
+
+.teacher-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.teacher-profile {
+  font-size: 0.95rem;
+  color: var(--ct-text-muted);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.teacher-quote {
+  position: relative;
+  padding: 1.25rem;
+  background: rgba(233, 133, 240, 0.08);
+  border-left: 3px solid var(--ct-border-strong);
+  border-radius: 0.75rem;
+
+  .bi-quote {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--ct-border-strong);
+    opacity: 0.6;
+  }
+
+  .quote-text {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ct-text-dim);
+    font-style: italic;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

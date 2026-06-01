@@ -1,0 +1,51 @@
+<header class="site-header" [ngClass]="{ 'is-scrolled': scrolled() }">
+  <nav class="container-fluid container-xl">
+    <div class="d-flex align-items-center justify-content-between py-3">
+
+      <!-- Logo -->
+      <a href="#" class="brand d-flex align-items-center gap-2 text-decoration-none">
+        <!-- <span class="brand-name">reprogramando <br> &lt;F&gt;<span class="text-grad-orange">uturo</span></span> -->
+        <img src="assets/logo-reprogramando-futuro-6.svg" alt="Logo Reprogramando o Futuro" width="150">
+      </a>
+
+      <!-- Nav desktop -->
+      <ul class="nav-links d-none d-lg-flex align-items-center gap-1 list-unstyled mb-0">
+        @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" class="nav-link-item">{{ link.label }}</a>
+        </li>
+        }
+      </ul>
+
+      <!-- CTA + burger -->
+      <div class="d-flex align-items-center gap-2">
+        <a href="#matricula" class="btn btn-primary d-none d-md-inline-flex align-items-center gap-2">
+          <i class="bi bi-arrow-right-circle"></i>
+          Agendar Aula Grátis
+        </a>
+        <button type="button" class="burger d-lg-none" [attr.aria-expanded]="mobileOpen()" aria-label="Abrir menu"
+          (click)="toggleMobile()">
+          <i class="bi" [ngClass]="mobileOpen() ? 'bi-x-lg' : 'bi-list'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Nav mobile (colapsável) -->
+    <div class="mobile-menu" [ngClass]="{ 'is-open': mobileOpen() }">
+      <ul class="list-unstyled mb-0 py-3">
+        @for (link of navLinks; track link.href) {
+        <li>
+          <a [href]="link.href" class="nav-link-item d-block py-2" (click)="closeMobile()">
+            {{ link.label }}
+          </a>
+        </li>
+        }
+        <li class="mt-3">
+          <a href="#matricula" class="btn btn-primary w-100" (click)="closeMobile()">
+            Agendar Aula Grátis
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

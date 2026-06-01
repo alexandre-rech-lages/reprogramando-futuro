@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  // Tema da seção: roxo profundo (pico do degradê)
+  // --ct-bg-card: #3D2A6A;
+  // --ct-bg-elev: #5B4193;
+  // --ct-border: rgba(233, 133, 240, 0.25);
+  // --ct-border-strong: rgba(233, 133, 240, 0.50);
+}
+
+.features-section {
+  background: #5B4193;
+}
+
+.feature-card {
+  height: 100%;
+  padding: 2rem;
+  background:  var(--ct-bg-card);
+  border: 3px dashed var(--ct-border);
+  border-radius: 1.25rem;
+  transition: all 0.3s ease;
+  animation: slide-up 0.6s ease-out both;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--ct-border-strong);
+    box-shadow: var(--ct-shadow-card);
+
+    .feature-icon {
+      transform: rotate(-6deg) scale(1.06);
+    }
+  }
+}
+
+.feature-icon {
+  display: inline-flex;
+  border: 1px solid var(--ct-border);
+  align-items: center;
+  justify-content: center;
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  //background: var(--ct-grad-hero);
+  color: #fff;
+  font-size: 1.7rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
+  //box-shadow: 0 12px 30px -10px rgba(219, 86, 235, 0.55);
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.feature-text {
+  color: var(--ct-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}

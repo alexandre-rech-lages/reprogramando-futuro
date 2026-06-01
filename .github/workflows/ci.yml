@@ -32,10 +32,23 @@ jobs:
       - name: Check affected projects
         id: affected
         run: |
-          API=$(npx nx show projects --affected --base=HEAD~1 | grep -w "api" && echo "true" || echo "false")
-          WEB=$(npx nx show projects --affected --base=HEAD~1 | grep -w "web" && echo "true" || echo "false")
-          echo "api=$API" >> $GITHUB_OUTPUT
-          echo "web=$WEB" >> $GITHUB_OUTPUT
+          AFFECTED_PROJECTS="$(npx nx show projects --affected --base=HEAD~1)"
+
+          echo "api=false" >> "$GITHUB_OUTPUT"
+          echo "web=false" >> "$GITHUB_OUTPUT"
+
+          if echo "$AFFECTED_PROJECTS" | grep -qw "api"; then
+            sed -i '$d' "$GITHUB_OUTPUT"
+            echo "api=true" >> "$GITHUB_OUTPUT"
+            echo "web=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          if echo "$AFFECTED_PROJECTS" | grep -qw "web"; then
+            if echo "$AFFECTED_PROJECTS" | grep -qw "api"; then
+              sed -i '$d' "$GITHUB_OUTPUT"
+            fi
+            echo "web=true" >> "$GITHUB_OUTPUT"
+          fi
 
   build-api:
     name: Build & Test API

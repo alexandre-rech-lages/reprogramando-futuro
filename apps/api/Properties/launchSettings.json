@@ -7,7 +7,8 @@
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5092",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RESEND_API_KEY": "re_CvV6M1WY_HBa76nhuJnYtvhAN91Mg5S8p"
       }
     },
     "https": {
@@ -16,7 +17,8 @@
       "launchBrowser": false,
       "applicationUrl": "https://localhost:7297;http://localhost:5092",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RESEND_API_KEY": "re_CvV6M1WY_HBa76nhuJnYtvhAN91Mg5S8p"
       }
     }
   }

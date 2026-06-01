@@ -1,0 +1,229 @@
+<section class="form-section" id="matricula">
+ 
+
+  <div class="container-xl position-relative">
+    <div class="row g-5 align-items-start">
+
+      <!-- Coluna esquerda: copy lateral -->
+      <div class="col-lg-5">
+        <span class="eyebrow">primeiro passo</span>
+        <h2 class="mb-4">
+          Pronto para ver seu filho(a)
+          <span class="text-grad-orange">criar tecnologia</span>?
+        </h2>
+        <p class="lead text-dim mb-4">
+          Preencha o formulário e nossa equipe vai entrar em contato para agendar uma aula experimental sem custo
+          e tirar todas as dúvidas sobre o programa.
+        </p>
+
+        <ul class="list-unstyled form-perks mb-0">
+          <li>
+            <i class="bi bi-bag-check"></i>
+            <div>
+              <strong>Aula experimental grátis</strong>
+              <small>Sem compromisso e sem custo</small>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-headset"></i>
+            <div>
+              <strong>Atendimento personalizado</strong>
+              <small>Nossa equipe responde em até 1 dia útil</small>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>Seus dados protegidos</strong>
+              <small>Usamos suas informações apenas para o contato</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna direita: formulário -->
+      <div class="col-lg-7">
+        <form
+          class="enroll-form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          novalidate>
+
+          <h3 class="form-heading">
+            <i class="bi bi-rocket-takeoff text-orange"></i>
+            Comece a jornada
+          </h3>
+
+          @if (success()) {
+            <div class="alert-success-custom" role="status">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Recebemos seus dados!</strong>
+                <span>Em breve entraremos em contato.</span>
+              </div>
+            </div>
+          }
+
+          @if (error()) {
+            <div class="alert-error-custom" role="alert">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <div>
+                <strong>Ops, algo deu errado!</strong>
+                <span>{{ error() }}</span>
+              </div>
+            </div>
+          }
+
+          <div class="row g-3">
+            <!-- Nome do aluno -->
+            <div class="col-md-8">
+              <label for="studentName" class="form-label">Nome do aluno</label>
+              <input
+                id="studentName"
+                type="text"
+                class="form-control"
+                formControlName="studentName"
+                [class.is-invalid]="isInvalid('studentName')"
+                autocomplete="name"
+                placeholder="Como o aluno se chama?">
+              @if (isInvalid('studentName')) {
+                <div class="invalid-feedback d-block">Informe o nome completo do aluno.</div>
+              }
+            </div>
+
+            <!-- Idade -->
+            <div class="col-md-4">
+              <label for="age" class="form-label">Idade</label>
+              <input
+                id="age"
+                type="number"
+                min="10"
+                max="17"
+                class="form-control"
+                formControlName="age"
+                [class.is-invalid]="isInvalid('age')"
+                placeholder="10 a 17">
+              @if (isInvalid('age')) {
+                <div class="invalid-feedback d-block">A idade precisa estar entre 10 e 17 anos.</div>
+              }
+            </div>
+
+            <!-- Responsável -->
+            <div class="col-12">
+              <label for="guardianName" class="form-label">Nome do responsável</label>
+              <input
+                id="guardianName"
+                type="text"
+                class="form-control"
+                formControlName="guardianName"
+                [class.is-invalid]="isInvalid('guardianName')"
+                autocomplete="name"
+                placeholder="Quem é o responsável legal pelo aluno?">
+              @if (isInvalid('guardianName')) {
+                <div class="invalid-feedback d-block">Informe o nome do responsável.</div>
+              }
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <label for="email" class="form-label">E-mail para contato</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                formControlName="email"
+                [class.is-invalid]="isInvalid('email')"
+                autocomplete="email"
+                placeholder="seu@email.com">
+              @if (isInvalid('email')) {
+                <div class="invalid-feedback d-block">Informe um e-mail válido.</div>
+              }
+            </div>
+
+            <!-- Telefone -->
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Telefone (com DDD)</label>
+              <input
+                id="phone"
+                type="tel"
+                class="form-control"
+                formControlName="phone"
+                [class.is-invalid]="isInvalid('phone')"
+                autocomplete="tel"
+                placeholder="(11) 99999-9999">
+              @if (isInvalid('phone')) {
+                <div class="invalid-feedback d-block">Informe um telefone válido.</div>
+              }
+            </div>
+
+            <!-- Cidade -->
+            <div class="col-md-6">
+              <label for="city" class="form-label">Cidade</label>
+              <input
+                id="city"
+                type="text"
+                class="form-control"
+                formControlName="city"
+                [class.is-invalid]="isInvalid('city')"
+                autocomplete="address-level2"
+                placeholder="Em qual cidade vocês moram?">
+              @if (isInvalid('city')) {
+                <div class="invalid-feedback d-block">Informe a cidade.</div>
+              }
+            </div>
+
+            <!-- Modalidade -->
+            <div class="col-md-6">
+              <label for="modality" class="form-label">Modalidade preferida</label>
+              <select
+                id="modality"
+                class="form-select"
+                formControlName="modality"
+                [class.is-invalid]="isInvalid('modality')">
+                <option value="" disabled>Escolha uma opção</option>
+                <option value="presencial">Presencial</option>
+                <option value="online">Online ao vivo</option>
+              </select>
+              @if (isInvalid('modality')) {
+                <div class="invalid-feedback d-block">Selecione uma modalidade.</div>
+              }
+            </div>
+
+            <!-- Termos -->
+            <div class="col-12 mt-4">
+              <div class="form-check terms-check">
+                <input
+                  id="terms"
+                  type="checkbox"
+                  class="form-check-input"
+                  formControlName="acceptTerms"
+                  [class.is-invalid]="isInvalid('acceptTerms')">
+                <label class="form-check-label" for="terms">
+                  Concordo em receber contato sobre o curso e li a
+                  <a href="#" class="link-inline">Política de Privacidade</a>.
+                </label>
+                @if (isInvalid('acceptTerms')) {
+                  <div class="invalid-feedback d-block">Você precisa aceitar para continuar.</div>
+                }
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary btn-lg w-100 d-inline-flex align-items-center justify-content-center gap-2" [disabled]="loading()">
+                @if (loading()) {
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Enviando...
+                } @else {
+                  <i class="bi bi-send"></i>
+                  Quero agendar a aula experimental
+                }
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

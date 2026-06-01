@@ -4,7 +4,7 @@
     "outDir": "../../dist/out-tsc",
     "types": [],
     "emitDeclarationOnly": false,
-    "composite": false,
+    "composite": true,
     "lib": ["es2022", "dom", "dom.iterable"]
   },
   "include": ["src/**/*.ts"],

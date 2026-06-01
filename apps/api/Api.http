@@ -4,3 +4,17 @@ GET {{Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST https://sheetdb.io/api/v1/v86z0sv7xbqle
+Content-Type: application/json
+
+{  
+  "nome_aluno": "Helena Rech",
+  "idade": "12",
+  "nome_responsavel": "Alexandre Rech",
+  "email": "rech@gmail.com",
+  "telefone": "49 99999-9999",
+  "cidade": "Lages",
+  "modalidade": "Presencial",
+  "data_inscricao": "28/05/2026"
+}
